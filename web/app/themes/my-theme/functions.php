@@ -15,9 +15,16 @@ add_action('after_setup_theme', 'my_theme_setup');
 // Enqueue styles and scripts
 function my_theme_assets() {
     wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        [],
+        null
+    );
+
+    wp_enqueue_style(
         'my-theme-style',
         get_stylesheet_uri(),
-        [],
+        ['google-fonts'],
         '1.0.0'
     );
 
@@ -45,6 +52,18 @@ function my_theme_post_types() {
         'show_in_rest' => true,
         'supports'     => ['title', 'thumbnail'],
         'menu_icon'    => 'dashicons-food'
+    ]);
+
+    register_taxonomy('menu_category', 'menu_item', [
+        'labels' => [
+            'name'          => 'Menu Categories',
+            'singular_name' => 'Menu Category',
+            'add_new_item'  => 'Add New Category',
+        ],
+        'public'       => true,
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'rewrite'      => ['slug' => 'menu-category'],
     ]);
 }
 add_action('init', 'my_theme_post_types');

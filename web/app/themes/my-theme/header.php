@@ -11,11 +11,23 @@
     <div class="nav-brand">
         <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
     </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <ul class="nav-links">
         <?php wp_nav_menu([
             'theme_location' => 'primary',
             'container'      => false,
-            'items_wrap'     => '%3$s'
+            'items_wrap'     => '%3$s',
+            'fallback_cb'    => false
         ]); ?>
     </ul>
+
+    <div class="nav-contact">
+        <span>(704) 555-0123</span>
+    </div>
 </nav>
