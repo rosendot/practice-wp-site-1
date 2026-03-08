@@ -1,0 +1,155 @@
+/*
+Theme Name: My Theme
+Theme URI: https://github.com/yourusername/practice-wp-site-1
+Author: Rosendo Torres
+Description: Custom WordPress theme for learning and client projects
+Version: 1.0.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: #e63946;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #c1121f;
+}
+
+/* Menu Section */
+.menu {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-card-content {
+    padding: 1rem;
+}
+
+.menu-card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-weight: 700;
+    color: #e63946;
+    font-size: 1.25rem;
+}
+
+/* Contact */
+.contact {
+    padding: 4rem 2rem;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+    padding: 2rem;
+    text-align: center;
+    background: #1a1a1a;
+    color: #fff;
+}
