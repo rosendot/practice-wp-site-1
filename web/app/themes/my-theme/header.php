@@ -27,7 +27,7 @@
         ]); ?>
     </ul>
 
-    <div class="nav-contact">
-        <span>(704) 555-0123</span>
+    <div class="nav-cta">
+        <a href="<?php echo esc_url(home_url('/menu')); ?>" class="btn btn--nav">Order Online</a>
     </div>
 </nav>

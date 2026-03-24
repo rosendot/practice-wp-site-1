@@ -1,50 +1,76 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# La Mesa — Practice Restaurant Website
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock"><img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
-  <a href="https://packagist.org/packages/roots/wordpress"><img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square"></a>
-  <a href="https://twitter.com/rootswp"><img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square"></a>
-  <a href="https://github.com/sponsors/roots"><img src="https://img.shields.io/badge/sponsor%20roots-525ddc?logo=github&style=flat-square&logoColor=ffffff&message=" alt="Sponsor Roots"></a>
-</p>
+A practice WordPress site built with Bedrock for learning theme development and agency workflows. The site is a Mexican restaurant theme with custom post types, taxonomy-based menu organization, and a multi-section home page.
 
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
+## Tech Stack
 
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
+- **WordPress** via [Bedrock](https://roots.io/bedrock/) (Roots)
+- **PHP 8.5**
+- **Composer** — dependency management (WordPress core + plugins)
+- **LocalWP** — local development server (Nginx + MySQL 8.0)
+- **MySQL** on `localhost:10005`
 
-## Support us
+## Local Setup
 
-We're dedicated to pushing modern WordPress development forward through our open source projects, and we need your support to keep building. You can support our work by purchasing [Radicle](https://roots.io/radicle/), our recommended WordPress stack, or by [sponsoring us on GitHub](https://github.com/sponsors/roots). Every contribution directly helps us create better tools for the WordPress ecosystem.
+1. Clone the repo
+2. Run `composer install`
+3. Copy `.env.example` to `.env` and fill in database credentials
+4. Point LocalWP (or your server) webroot to the `web/` directory
+5. Activate the `my-theme` theme in WP Admin
 
-### Sponsors
+## Project Structure
 
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="120" height="90"></a>
+```
+config/
+  application.php        # Bedrock config (DB, URLs, salts)
+  environments/          # Per-environment overrides
+web/
+  app/
+    themes/my-theme/     # All custom theme code lives here
+      style.css          # Full stylesheet (CSS custom properties, BEM)
+      functions.php      # Theme setup, CPTs, taxonomies, meta boxes
+      header.php         # Sticky navbar with nav menu + Order Online CTA
+      footer.php         # 3-column footer (contact, brand, hours)
+      front-page.php     # Home page (8 sections)
+      page-menu.php      # Full menu grouped by category
+      page-about.php     # About page (story, values, CTA)
+      assets/js/main.js  # Mobile nav toggle
+    mu-plugins/          # Bedrock autoloader
+    plugins/             # Composer-managed (gitignored)
+  wp/                    # WordPress core (gitignored)
+```
 
-## Overview
+## Theme Features
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+### Pages
+- **Home** — Hero, address bar, welcome section, featured items, kitchen section, menu categories, visit us, photo gallery
+- **Menu** — Items grouped by `menu_category` taxonomy with prices and descriptions
+- **About** — Story section, values cards, CTA
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
+### Custom Post Types
+- **Menu Items** (`menu_item`) — Each item has a title, featured image, price (custom field), and description (custom field)
 
-## Getting Started
+### Taxonomies
+- **Menu Categories** (`menu_category`) — Hierarchical categories: Tacos, Burritos, Quesadillas, Enchiladas, Tortas, Flautas, Sopas y Caldos, Sides, Bebidas, Desayuno, Postres
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+### Design
+- Mexican restaurant color scheme (red `#b42318`, gold `#d4a017`, dark `#1a1208`, cream `#faf6f0`)
+- Georgia serif headings, Inter sans-serif body
+- Mobile-first responsive (breakpoints at 480px, 768px)
+- BEM class naming throughout
+- CSS custom properties for all colors, fonts, spacing
 
-## Stay Connected
+## What Was Built
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+1. **Bedrock setup** — Composer project, `.env` config, Nginx webroot pointed to `web/`
+2. **Custom theme** (`my-theme`) — From scratch, no starter theme
+3. **Custom post type + taxonomy** — `menu_item` with `menu_category` for organizing the restaurant menu
+4. **Meta boxes** — Price and description fields with nonce verification and sanitization
+5. **Navigation** — `register_nav_menus()` with primary and footer locations, set up through WP Admin
+6. **50+ menu items** — Bulk-inserted via SQL with prices, descriptions, and category assignments
+7. **Multi-section home page** — Inspired by professional restaurant sites with hero, welcome split, featured items, kitchen story, category grid, visit us, and photo gallery
+8. **Responsive design** — Mobile nav toggle, grid collapses, font scaling
+
+## Database Seeding
+
+Menu items were bulk-inserted via SQL directly into the LocalWP MySQL database (`localhost:10005`). Categories, prices, descriptions, and taxonomy relationships were all set up in one script. The original Quesadilla item was created manually through WP Admin as a learning exercise.
