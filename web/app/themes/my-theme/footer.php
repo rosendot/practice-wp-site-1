@@ -2,7 +2,7 @@
     <div class="footer__grid">
         <div class="footer__contact">
             <h4 class="footer__title">Contact Us</h4>
-            <p>123 Main Street<br>Charlotte, NC 28202</p>
+            <p>3001 Brellon Ln<br>Durham, NC 27703</p>
             <p>(704) 555-0123</p>
             <p>hola@lamesa.com</p>
         </div>

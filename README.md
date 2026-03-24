@@ -31,10 +31,10 @@ web/
       functions.php      # Theme setup, CPTs, taxonomies, meta boxes
       header.php         # Sticky navbar with nav menu + Order Online CTA
       footer.php         # 3-column footer (contact, brand, hours)
-      front-page.php     # Home page (8 sections)
+      front-page.php     # Home page (4 sections)
       page-menu.php      # Full menu grouped by category
       page-about.php     # About page (story, values, CTA)
-      assets/js/main.js  # Mobile nav toggle
+      assets/js/main.js  # Mobile nav toggle, infinite carousels with swipe
     mu-plugins/          # Bedrock autoloader
     plugins/             # Composer-managed (gitignored)
   wp/                    # WordPress core (gitignored)
@@ -43,7 +43,7 @@ web/
 ## Theme Features
 
 ### Pages
-- **Home** — Hero, address bar, welcome section, featured items, kitchen section, menu categories, visit us, photo gallery
+- **Home** — Hero (with welcome text overlay), fan favorites carousel, visit us (with Google Maps embed), photo gallery carousel
 - **Menu** — Items grouped by `menu_category` taxonomy with prices and descriptions
 - **About** — Story section, values cards, CTA
 
@@ -68,8 +68,8 @@ web/
 4. **Meta boxes** — Price and description fields with nonce verification and sanitization
 5. **Navigation** — `register_nav_menus()` with primary and footer locations, set up through WP Admin
 6. **50+ menu items** — Bulk-inserted via SQL with prices, descriptions, and category assignments
-7. **Multi-section home page** — Inspired by professional restaurant sites with hero, welcome split, featured items, kitchen story, category grid, visit us, and photo gallery
-8. **Responsive design** — Mobile nav toggle, grid collapses, font scaling
+7. **Multi-section home page** — Hero with welcome overlay, fan favorites infinite carousel (8 items, arrows + dots + swipe), visit us with embedded Google Map, photo gallery carousel
+8. **Responsive design** — Mobile nav toggle, grid collapses, font scaling, touch swipe on carousels
 
 ## Database Seeding
 

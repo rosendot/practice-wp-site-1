@@ -17,7 +17,7 @@ get_header(); ?>
         <div class="about-story">
             <div class="about-story__content">
                 <h2 class="about-story__title">From Our Family to Yours</h2>
-                <p class="about-story__text">La Mesa started with a simple idea: bring the authentic flavors of our grandmother's kitchen to the Charlotte community. Every recipe we serve has been passed down through three generations.</p>
+                <p class="about-story__text">La Mesa started with a simple idea: bring the authentic flavors of our grandmother's kitchen to the Durham community. Every recipe we serve has been passed down through three generations.</p>
                 <p class="about-story__text">We opened our doors in 2020, and since then we've been committed to using the freshest ingredients, hand-pressed tortillas, and traditional cooking techniques that make every bite taste like home.</p>
             </div>
             <div>
@@ -46,7 +46,7 @@ get_header(); ?>
             <div class="value-card">
                 <div class="value-card__icon">&#x2764;&#xfe0f;</div>
                 <h3 class="value-card__title">Community First</h3>
-                <p class="value-card__text">La Mesa means "the table" &mdash; and everyone has a seat at ours. We're proud to be part of the Charlotte neighborhood.</p>
+                <p class="value-card__text">La Mesa means "the table" &mdash; and everyone has a seat at ours. We're proud to be part of the Durham neighborhood.</p>
             </div>
         </div>
     </section>

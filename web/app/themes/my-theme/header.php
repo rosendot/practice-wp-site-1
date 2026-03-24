@@ -10,6 +10,7 @@
 <nav class="navbar">
     <div class="nav-brand">
         <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
+        <span class="nav-brand__address">3001 Brellon Ln, Durham, NC 27703</span>
     </div>
 
     <button class="nav-toggle" aria-label="Toggle navigation">
